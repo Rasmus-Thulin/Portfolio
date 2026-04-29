@@ -54,45 +54,13 @@ a {
   text-decoration: none;
 }
 
-.ambient-bg {
+#bgCanvas {
   position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: -1;
-  overflow: hidden;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(42px);
-  opacity: 0.36;
-  transform: translateY(var(--offset, 0px));
-  transition: transform 0.15s linear;
-}
-
-.blob-a {
-  width: 36vw;
-  height: 36vw;
-  background: #1e4971;
-  left: -10vw;
-  top: 6vh;
-}
-
-.blob-b {
-  width: 26vw;
-  height: 26vw;
-  background: #1458a3;
-  right: 8vw;
-  top: 28vh;
-}
-
-.blob-c {
-  width: 18vw;
-  height: 18vw;
-  background: #263253;
-  right: 30vw;
-  bottom: 5vh;
 }
 
 .site-header {

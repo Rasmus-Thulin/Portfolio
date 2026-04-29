@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Morphing Blobs - Ograf</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="LiquidMorphingBlobs.js"></script>
+    <pixla-liquidmorphingblobs id="liquidmorphingblobs-component"></pixla-liquidmorphingblobs>
+
+    <script>
+        const component = document.getElementById('liquidmorphingblobs-component');
+
+        let resolveReady;
+        window.ografReady = new Promise(resolve => { resolveReady = resolve; });
+        window.ografComponent = null;
+
+        async function initComponent() {
+            try {
+                await component.load({
+                    data: {},
+                    renderType: 'realtime',
+                    renderCharacteristics: { resolution: { width: 1920, height: 1080 } }
+                });
+
+                window.ografComponent = component;
+                resolveReady();
+                console.log('[LiquidMorphingBlobs Template] Component loaded and ready');
+            } catch (error) {
+                console.error('[LiquidMorphingBlobs Template] Error loading component:', error);
+            }
+        }
+
+        initComponent();
+    </script>
+</body>
+
+</html>

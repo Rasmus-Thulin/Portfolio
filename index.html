@@ -17,11 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="ambient-bg" aria-hidden="true">
-      <span class="blob blob-a"></span>
-      <span class="blob blob-b"></span>
-      <span class="blob blob-c"></span>
-    </div>
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
     <div class="cursor-dot" aria-hidden="true"></div>
 
     <header class="site-header glass">
@@ -33,7 +29,7 @@
         <a href="#highlight">Highlight</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button id="themeToggle" class="chip" aria-label="Toggle light and dark mode">Dark</button>
+
     </header>
 
     <main>
@@ -213,6 +209,7 @@
       </article>
     </template>
 
+    <script src="bg.js" defer></script>
     <script type="module" src="app.js"></script>
   </body>
 </html>

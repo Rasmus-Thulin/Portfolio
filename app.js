@@ -44,39 +44,6 @@ function bindUI() {
     if (event.key === "Escape") closeModal();
   });
 
-  const themeToggle = document.getElementById("themeToggle");
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
-    document.documentElement.dataset.theme = "light";
-    themeToggle.textContent = "Light";
-  }
-
-  themeToggle.addEventListener("click", () => {
-    const isLight = document.documentElement.dataset.theme === "light";
-    if (isLight) {
-      delete document.documentElement.dataset.theme;
-      localStorage.setItem("theme", "dark");
-      themeToggle.textContent = "Dark";
-    } else {
-      document.documentElement.dataset.theme = "light";
-      localStorage.setItem("theme", "light");
-      themeToggle.textContent = "Light";
-    }
-  });
-
-  // Small ambient motion tied to scroll position for premium depth.
-  const blobs = Array.from(document.querySelectorAll(".blob"));
-  window.addEventListener(
-    "scroll",
-    () => {
-      const y = window.scrollY;
-      blobs[0].style.setProperty("--offset", `${y * 0.05}px`);
-      blobs[1].style.setProperty("--offset", `${y * -0.04}px`);
-      blobs[2].style.setProperty("--offset", `${y * 0.03}px`);
-    },
-    { passive: true }
-  );
-
   const cursor = document.querySelector(".cursor-dot");
   window.addEventListener("pointermove", (event) => {
     if (!cursor) return;
