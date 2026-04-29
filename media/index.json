@@ -19,6 +19,12 @@
       "filterType": "Campaign"
     },
     {
+      "title": "Campaign Video 4",
+      "src": "https://youtu.be/FyquYx7LNu0",
+      "type": "youtube",
+      "filterType": "Campaign"
+    },
+    {
       "title": "Moonwalkers",
       "src": "media/Moonwalkers.jpg",
       "type": "image",
