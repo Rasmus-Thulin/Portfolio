@@ -1,18 +1,6 @@
 {
   "items": [
     {
-      "title": "Moonwalkers",
-      "src": "media/Moonwalkers.jpg",
-      "type": "image",
-      "filterType": "Image"
-    },
-    {
-      "title": "Moonwalkers1",
-      "src": "media/Moonwalkers1.jpg",
-      "type": "image",
-      "filterType": "Image"
-    },
-    {
       "title": "Pixla Controller",
       "src": "media/pixla-controller.png",
       "type": "image",
