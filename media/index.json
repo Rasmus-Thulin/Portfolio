@@ -7,12 +7,6 @@
       "filterType": "Video"
     },
     {
-      "title": "IKEA International School Of Helsingborg",
-      "src": "media/IKEA___International_School_of_Helsingborg.mp4",
-      "type": "video",
-      "filterType": "Video"
-    },
-    {
       "title": "Moonwalkers",
       "src": "media/Moonwalkers.jpg",
       "type": "image",
@@ -25,10 +19,16 @@
       "filterType": "Image"
     },
     {
-      "title": "NetZero Bumper",
-      "src": "media/NetZero_Bumper.mov",
-      "type": "video",
-      "filterType": "Video"
+      "title": "Pixla Controller",
+      "src": "media/pixla-controller.png",
+      "type": "image",
+      "filterType": "Image"
+    },
+    {
+      "title": "Pixla Timeline",
+      "src": "media/pixla-timeline.png",
+      "type": "image",
+      "filterType": "Image"
     }
   ]
 }
