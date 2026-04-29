@@ -1,3 +1,10 @@
 {
-  "items": []
+  "items": [
+    {
+      "title": "Rasmus Profile",
+      "src": "images/rasmus-profile.jpg",
+      "type": "image",
+      "filterType": "Image"
+    }
+  ]
 }

@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "title": "Moonwalkers — IKEA",
-      "src": "https://www.youtube.com/watch?v=bELWcK6BXRY",
-      "type": "youtube",
-      "filterType": "Video"
-    },
-    {
       "title": "Moonwalkers",
       "src": "media/Moonwalkers.jpg",
       "type": "image",

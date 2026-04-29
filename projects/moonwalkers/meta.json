@@ -1,0 +1,28 @@
+{
+  "title": "Moonwalkers",
+  "description": "Promotion video for IKEA — a high-energy campaign film produced for IKEA Global Communication.",
+  "tags": [
+    "Campaign",
+    "Motion",
+    "Video"
+  ],
+  "year": "2024",
+  "tools": [
+    "After Effects",
+    "Premiere Pro",
+    "DaVinci Resolve"
+  ],
+  "thumbnail": "media/Moonwalkers.jpg",
+  "previewVideo": "",
+  "heroVideo": "",
+  "gallery": [
+    "media/Moonwalkers.jpg",
+    "media/Moonwalkers1.jpg"
+  ],
+  "embeds": [
+    {
+      "label": "Watch on YouTube",
+      "url": "https://www.youtube.com/watch?v=bELWcK6BXRY"
+    }
+  ]
+}
