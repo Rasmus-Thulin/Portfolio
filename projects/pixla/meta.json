@@ -14,12 +14,11 @@
     "After Effects"
   ],
   "thumbnail": "media/Moonwalkers.jpg",
-  "previewVideo": "media/BUMPER Retail_Expansion_2025.(DEMO).mp4",
-  "heroVideo": "media/IKEA___International_School_of_Helsingborg.mp4",
+  "previewVideo": "",
+  "heroVideo": "",
   "gallery": [
     "media/Moonwalkers.jpg",
-    "media/Moonwalkers1.jpg",
-    "media/NetZero_Bumper.mov"
+    "media/Moonwalkers1.jpg"
   ],
   "embeds": [
     {
