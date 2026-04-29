@@ -88,6 +88,23 @@ async function buildFlatMediaManifest(directory, prefix) {
   const files = await fs.readdir(directory);
   const items = [];
 
+  // Preserve manually added external entries (e.g. YouTube links)
+  // so `npm run build:manifests` does not remove them.
+  let preservedItems = [];
+  const existingIndexPath = path.join(directory, "index.json");
+  try {
+    const existing = JSON.parse(await fs.readFile(existingIndexPath, "utf8"));
+    if (Array.isArray(existing.items)) {
+      preservedItems = existing.items.filter((item) => {
+        if (!item || typeof item !== "object") return false;
+        if (typeof item.src !== "string") return false;
+        return item.src.startsWith("http://") || item.src.startsWith("https://");
+      });
+    }
+  } catch {
+    preservedItems = [];
+  }
+
   for (const filename of files) {
     if (filename === "index.json") continue;
     const ext = path.extname(filename).toLowerCase();
@@ -113,7 +130,13 @@ async function buildFlatMediaManifest(directory, prefix) {
     }
   }
 
-  return items;
+  const merged = [...preservedItems, ...items];
+  const seen = new Set();
+  return merged.filter((item) => {
+    if (!item?.src || seen.has(item.src)) return false;
+    seen.add(item.src);
+    return true;
+  });
 }
 
 function inferFilter(name, fallback) {

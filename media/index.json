@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "title": "Moonwalkers Promotion Video for IKEA",
+      "src": "https://www.youtube.com/watch?v=bELWcK6BXRY&t=6s",
+      "type": "youtube",
+      "filterType": "Campaign"
+    },
+    {
       "title": "Moonwalkers",
       "src": "media/Moonwalkers.jpg",
       "type": "image",
