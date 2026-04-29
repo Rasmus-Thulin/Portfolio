@@ -2,6 +2,7 @@
   --bg: #050607;
   --bg-elev: #0d1014;
   --surface: rgba(20, 25, 32, 0.55);
+  --radius-squircle: 16px;
   --line: rgba(142, 168, 201, 0.2);
   --text: #f2f5fa;
   --text-muted: #a4b0c2;
@@ -68,8 +69,8 @@ a {
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  width: min(92%, 1100px);
-  padding: 0.9rem 1rem;
+  width: min(max(92%, calc(100% - 2rem)), 1240px);
+  padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,7 +83,21 @@ a {
   border: 1px solid var(--line);
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow);
-  border-radius: 16px;
+  border-radius: var(--radius-squircle);
+  corner-shape: squircle;
+}
+
+.project-card,
+.media-item,
+.panel,
+.media-panel video,
+.image-row img,
+.yt-iframe-wrap,
+.modal-hero,
+.modal-gallery img,
+.modal-gallery video,
+.empty-state {
+  corner-shape: squircle;
 }
 
 .brand {
