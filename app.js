@@ -204,8 +204,7 @@ function renderMedia() {
     const mediaImage = fragment.querySelector(".media-image");
 
     if (item.type === "youtube") {
-      const ytMatch = item.src.match(/[?&]v=([^&]+)/);
-      const ytId = ytMatch ? ytMatch[1] : "";
+      const ytId = extractYouTubeId(item.src);
       mediaVideo.remove();
       mediaImage.remove();
       const ytWrap = document.createElement("a");
@@ -216,10 +215,12 @@ function renderMedia() {
       ytWrap.dataset.ytId = ytId;
       ytWrap.dataset.ytTitle = item.title || "";
       ytWrap.addEventListener("click", (e) => {
+        if (!ytId) return;
         e.preventDefault();
         openYouTubeModal(ytId, item.title || "");
       });
-      ytWrap.innerHTML = `<img src="https://img.youtube.com/vi/${ytId}/maxresdefault.jpg" alt="${item.title || "YouTube"}" loading="lazy" /><span class="media-yt-play" aria-hidden="true">&#9654;</span>`;
+      const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : "images/rasmus-profile.jpg";
+      ytWrap.innerHTML = `<img src="${thumb}" alt="${item.title || "YouTube"}" loading="lazy" /><span class="media-yt-play" aria-hidden="true">&#9654;</span>`;
       fragment.querySelector("article").prepend(ytWrap);
     } else if (item.type === "video") {
       mediaVideo.src = item.src;
@@ -338,6 +339,32 @@ function observeReveal() {
 
 function isVideo(path) {
   return /\.(mp4|webm|mov|m4v)$/i.test(path || "");
+}
+
+function extractYouTubeId(url) {
+  if (!url) return "";
+
+  try {
+    const parsed = new URL(url, window.location.origin);
+    const host = parsed.hostname.replace(/^www\./, "").toLowerCase();
+
+    if (host === "youtu.be") {
+      return parsed.pathname.split("/").filter(Boolean)[0] || "";
+    }
+
+    if (host.endsWith("youtube.com")) {
+      const fromQuery = parsed.searchParams.get("v");
+      if (fromQuery) return fromQuery;
+
+      const match = parsed.pathname.match(/^\/(embed|shorts)\/([^/?#&]+)/i);
+      if (match?.[2]) return match[2];
+    }
+  } catch {
+    // Fall through to regex fallback below.
+  }
+
+  const fallback = String(url).match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([^?#&/]+)/i);
+  return fallback?.[1] || "";
 }
 
 function escapeHTML(value) {
