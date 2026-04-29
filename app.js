@@ -203,7 +203,25 @@ function renderMedia() {
     const mediaVideo = fragment.querySelector(".media-video");
     const mediaImage = fragment.querySelector(".media-image");
 
-    if (item.type === "video") {
+    if (item.type === "youtube") {
+      const ytMatch = item.src.match(/[?&]v=([^&]+)/);
+      const ytId = ytMatch ? ytMatch[1] : "";
+      mediaVideo.remove();
+      mediaImage.remove();
+      const ytWrap = document.createElement("a");
+      ytWrap.href = item.src;
+      ytWrap.target = "_blank";
+      ytWrap.rel = "noreferrer";
+      ytWrap.className = "media-yt-wrap";
+      ytWrap.dataset.ytId = ytId;
+      ytWrap.dataset.ytTitle = item.title || "";
+      ytWrap.addEventListener("click", (e) => {
+        e.preventDefault();
+        openYouTubeModal(ytId, item.title || "");
+      });
+      ytWrap.innerHTML = `<img src="https://img.youtube.com/vi/${ytId}/maxresdefault.jpg" alt="${item.title || "YouTube"}" loading="lazy" /><span class="media-yt-play" aria-hidden="true">&#9654;</span>`;
+      fragment.querySelector("article").prepend(ytWrap);
+    } else if (item.type === "video") {
       mediaVideo.src = item.src;
       if (item.poster) mediaVideo.poster = item.poster;
       mediaImage.remove();
@@ -259,6 +277,25 @@ function closeModal() {
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   modalInner.innerHTML = "";
+}
+
+function openYouTubeModal(ytId, title) {
+  modalInner.innerHTML = `
+    <div class="yt-modal-wrap">
+      ${title ? `<h3 class="yt-modal-title">${escapeHTML(title)}</h3>` : ""}
+      <div class="yt-iframe-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/${ytId}?autoplay=1"
+          title="${escapeAttr(title)}"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  `;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
 }
 
 function createFilterButton(label, isActive, onClick) {

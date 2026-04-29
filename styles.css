@@ -150,6 +150,43 @@ main {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-photo {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 60px rgba(255, 214, 87, 0.15), 0 0 120px rgba(72, 149, 239, 0.1);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    text-align: center;
+  }
+  .hero-photo {
+    width: clamp(80px, 28vw, 120px);
+  }
 }
 
 .eyebrow {
@@ -362,6 +399,40 @@ h1 {
   font-size: 0.85rem;
 }
 
+.media-yt-wrap {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.media-yt-wrap img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.media-yt-wrap:hover img {
+  transform: scale(1.04);
+}
+
+.media-yt-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+  transition: background 0.2s;
+}
+
+.media-yt-wrap:hover .media-yt-play {
+  background: rgba(0, 0, 0, 0.55);
+}
+
 .two-col {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -462,6 +533,35 @@ h1 {
   margin: 5vh auto;
   padding: 1.2rem;
   position: relative;
+}
+
+.yt-modal-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.5rem 0 1rem;
+}
+
+.yt-modal-title {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  color: var(--text-primary);
+}
+
+.yt-iframe-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.yt-iframe-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .modal-close {

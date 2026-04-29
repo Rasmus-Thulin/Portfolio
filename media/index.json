@@ -1,6 +1,24 @@
 {
   "items": [
     {
+      "title": "Moonwalkers — IKEA",
+      "src": "https://www.youtube.com/watch?v=bELWcK6BXRY",
+      "type": "youtube",
+      "filterType": "Video"
+    },
+    {
+      "title": "Moonwalkers",
+      "src": "media/Moonwalkers.jpg",
+      "type": "image",
+      "filterType": "Image"
+    },
+    {
+      "title": "Moonwalkers1",
+      "src": "media/Moonwalkers1.jpg",
+      "type": "image",
+      "filterType": "Image"
+    },
+    {
       "title": "Pixla Controller",
       "src": "media/pixla-controller.png",
       "type": "image",
