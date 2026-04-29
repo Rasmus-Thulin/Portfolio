@@ -1,0 +1,30 @@
+{
+  "title": "Pixla Broadcast System",
+  "description": "A modular content and routing system for live and campaign production.",
+  "tags": [
+    "Live",
+    "Motion",
+    "Graphics"
+  ],
+  "year": "2026",
+  "tools": [
+    "JavaScript",
+    "Node",
+    "NDI",
+    "After Effects"
+  ],
+  "thumbnail": "media/Moonwalkers.jpg",
+  "previewVideo": "media/BUMPER Retail_Expansion_2025.(DEMO).mp4",
+  "heroVideo": "media/IKEA___International_School_of_Helsingborg.mp4",
+  "gallery": [
+    "media/Moonwalkers.jpg",
+    "media/Moonwalkers1.jpg",
+    "media/NetZero_Bumper.mov"
+  ],
+  "embeds": [
+    {
+      "label": "Case Film",
+      "url": "https://vimeo.com"
+    }
+  ]
+}

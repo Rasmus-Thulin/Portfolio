@@ -1,0 +1,10 @@
+{
+  "name": "premium-portfolio-cv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "High-end technical producer portfolio CV with dynamic project and media loading",
+  "scripts": {
+    "build:manifests": "node tools/generate-manifests.js",
+    "dev": "python3 -m http.server 4173"
+  }
+}

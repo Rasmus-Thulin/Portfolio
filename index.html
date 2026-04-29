@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rasmus Thulin – Technical Producer</title>
+    <meta
+      name="description"
+      content="Rasmus Thulin – Technical Producer på IKEA Global Communication. Grafik, live-TV, rörlig grafik och integrerade mediemiljöer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient-bg" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+    </div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+
+    <header class="site-header glass">
+      <a href="#hero" class="brand">RT</a>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#media-library">Media</a>
+        <a href="#about">About</a>
+        <a href="#highlight">Highlight</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="themeToggle" class="chip" aria-label="Toggle light and dark mode">Dark</button>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
+          <source src="media/IKEA___International_School_of_Helsingborg.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow reveal">Technical Producer · IKEA Global Communication</p>
+          <h1 class="reveal">Rasmus Thulin</h1>
+          <p class="title reveal">Grafik · Live-TV · Motion · AV · Code</p>
+          <p class="tagline reveal">
+            Förvandlar idéer till visuella och tekniska upplevelser – från första tanke till färdig leverans.
+            Skapar innehåll som både engagerar och fungerar i praktiken.
+          </p>
+          <a class="cta reveal" href="#work">View Work</a>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Portfolio + CV</p>
+          <h2>Projects / Work</h2>
+          <p>Auto-loaded from the projects directory with tags, media, and detail views.</p>
+        </div>
+        <div id="projectFilters" class="filters reveal"></div>
+        <div id="projectsGrid" class="projects-grid"></div>
+      </section>
+
+      <section id="media-library" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Asset Browser</p>
+          <h2>Media Library</h2>
+          <p>Direct view into your videos and images with smart filtering and lazy loading.</p>
+        </div>
+        <div id="mediaFilters" class="filters reveal"></div>
+        <div id="mediaGrid" class="media-grid"></div>
+      </section>
+
+      <section id="about" class="section two-col">
+        <div class="panel reveal">
+          <p class="eyebrow">About / CV</p>
+          <h2>Technical Producer med systemtänk och kreativ drivkraft</h2>
+          <p>
+            Technical Producer på IKEA Global Communication med en passion för att förvandla idéer
+            till visuella och tekniska upplevelser. Rör mig obehindrat mellan grafik, ljud och video,
+            och trivs i hela produktionskedjan – från första tanke till färdig leverans.
+          </p>
+          <div class="skills">
+            <span>Adobe Creative Suite</span>
+            <span>Live Broadcast</span>
+            <span>Rörlig grafik</span>
+            <span>AV-system</span>
+            <span>AI / Vibecoding</span>
+            <span>IT Support</span>
+            <span>Film &amp; Foto</span>
+            <span>Webbproduktion</span>
+          </div>
+          <a class="secondary-btn" href="media/CV.pdf" download>Ladda ned CV (PDF)</a>
+        </div>
+
+        <div class="panel reveal">
+          <p class="eyebrow">Experience</p>
+          <h3>Timeline</h3>
+          <div class="timeline" id="timeline">
+            <article class="timeline-item">
+              <span class="year">2021 – Just nu</span>
+              <h4>Technical Producer — Ingka Services AB</h4>
+              <p>Specialiserad inom moderna broadcastflöden med realtidsproduktion och teknisk precision i centrum. Bygger och optimerar system för komplexa produktioner, skapar grafiska evenemangsidentiteter för global genomslagskraft. Filmar och fotograferar för internt och externt bruk.</p>
+            </article>
+            <article class="timeline-item">
+              <span class="year">2014 – 2021</span>
+              <h4>Technical Support — Ingka AB</h4>
+              <p>Teknisk support inom mötesteknik i kontorsmiljö. Drift, felsökning och optimering av AV- och videokonferenssystem. Även ett år som operativ ledare för hela Office Support-teamet.</p>
+            </article>
+            <article class="timeline-item">
+              <span class="year">2011 – 2014</span>
+              <h4>Sales Co-Worker / IT Support — IKEA Svenska Försäljnings AB</h4>
+              <p>Säljare i varuhus och restaurang, driftledare. 2013 IT-support för hela varuhuset.</p>
+            </article>
+            <article class="timeline-item">
+              <span class="year">2010 – 2011</span>
+              <h4>Grafiker — Via HD / Comrett.se</h4>
+              <p>Reklamgrafiker för comrett.se.</p>
+            </article>
+          </div>
+          <div style="margin-top:1.2rem">
+            <p class="eyebrow" style="margin-bottom:.5rem">Utbildning</p>
+            <p style="margin:0 0 .3rem"><strong>Radio Journalistik</strong> — Akademi Båstad / Högskola<br><span style="color:var(--text-muted);font-size:.9rem">Ljudproduktion · Webbproduktion · Journalistik</span></p>
+            <p style="margin:0"><strong>Media Produktion</strong> — Filbornaskolan / Gymnasium<br><span style="color:var(--text-muted);font-size:.9rem">Film · Foto · Radio · Text · Grafik</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="highlight" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Tech Highlight</p>
+          <h2>Pixla Graphics</h2>
+          <p>
+            En grafikmotor för live-TV-grafik, byggd från grunden. Effektiviserar IKEA:s livesändningar
+            med en tidsvinst på <strong>8 timmar i veckan</strong>.
+          </p>
+        </div>
+        <div class="highlight-layout">
+          <article class="panel reveal">
+            <h3>Vad det löser</h3>
+            <p>
+              Pixla är ett eget system som eliminerar repetitivt manuellt arbete i live-produktioner.
+              Standardiserar scen-logik, mediamappning och outputrouting – vilket frigör kreativ kapacitet.
+            </p>
+            <ul>
+              <li>8 timmar frigjord tid per vecka för IKEA:s team</li>
+              <li>Sänker operatörsfel i livemiljöer drastiskt</li>
+              <li>Skalbar från studio till multinationella event</li>
+            </ul>
+            <div class="tech-stack">
+              <span>JavaScript</span>
+              <span>Node</span>
+              <span>Live-TV-grafik</span>
+              <span>Web APIs</span>
+              <span>Adobe Creative Suite</span>
+            </div>
+            <a class="secondary-btn" href="https://pixla.graphics" target="_blank" rel="noreferrer" style="margin-top:1rem">pixla.graphics ↗</a>
+          </article>
+          <article class="panel media-panel reveal">
+            <video autoplay muted loop playsinline controls preload="none">
+              <source src="media/NetZero_Bumper.mov" type="video/quicktime" />
+            </video>
+            <div class="image-row">
+              <img src="media/Moonwalkers.jpg" alt="Production still from visual sequence" loading="lazy" />
+              <img src="media/Moonwalkers1.jpg" alt="Second production still from visual sequence" loading="lazy" />
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="section-head reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Låt oss bygga något exceptionellt</h2>
+          <p>Helsingborg-baserad. Tillgänglig för produktionsledarskap, live-grafik och teknisk kreativ regi.</p>
+        </div>
+        <div class="contact-actions reveal">
+          <a class="cta" href="mailto:Rasmus.Thulin@live.se">Rasmus.Thulin@live.se</a>
+          <a class="secondary-btn" href="https://www.linkedin.com/in/rasmus-thulin-13b51264/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="secondary-btn" href="https://pixla.graphics" target="_blank" rel="noreferrer">pixla.graphics</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="projectModal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="modal"></div>
+      <div class="modal-content glass">
+        <button class="modal-close" data-close="modal" aria-label="Close project view">×</button>
+        <div id="modalInner"></div>
+      </div>
+    </div>
+
+    <template id="projectCardTemplate">
+      <article class="project-card reveal">
+        <button class="project-visual" type="button">
+          <img class="thumb" alt="" loading="lazy" />
+          <video class="preview" muted loop playsinline preload="metadata"></video>
+          <span class="year-badge"></span>
+        </button>
+        <div class="project-meta">
+          <h3></h3>
+          <p class="description"></p>
+          <div class="tag-row"></div>
+        </div>
+      </article>
+    </template>
+
+    <template id="mediaItemTemplate">
+      <article class="media-item reveal">
+        <video class="media-video" muted loop playsinline preload="metadata" controls></video>
+        <img class="media-image" alt="" loading="lazy" />
+        <div class="media-item-meta"></div>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
