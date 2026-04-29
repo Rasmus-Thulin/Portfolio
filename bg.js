@@ -19,7 +19,7 @@ const BLOBS = [
   {
     x: -0.10, y: 0.18,
     r: 0.36,
-    color: [30, 73, 113],
+    color: [255, 214, 87],
     alpha: 0.36,
     vx: 0.035, vy: 0.02,
     pts: 7, speed: 0.0012, morph: 0.12,
@@ -27,7 +27,7 @@ const BLOBS = [
   {
     x: 0.92, y: 0.41,
     r: 0.26,
-    color: [20, 88, 163],
+    color: [255, 102, 179],
     alpha: 0.36,
     vx: -0.03, vy: 0.015,
     pts: 7, speed: 0.00135, morph: 0.11,
@@ -35,10 +35,34 @@ const BLOBS = [
   {
     x: 0.70, y: 0.90,
     r: 0.18,
-    color: [38, 50, 83],
+    color: [72, 149, 239],
     alpha: 0.36,
     vx: -0.02, vy: -0.012,
     pts: 6, speed: 0.0011, morph: 0.1,
+  },
+  {
+    x: 0.30, y: 0.28,
+    r: 0.16,
+    color: [119, 221, 119],
+    alpha: 0.34,
+    vx: 0.018, vy: -0.014,
+    pts: 6, speed: 0.00128, morph: 0.1,
+  },
+  {
+    x: 0.58, y: 0.62,
+    r: 0.14,
+    color: [168, 120, 255],
+    alpha: 0.32,
+    vx: -0.016, vy: 0.01,
+    pts: 6, speed: 0.00122, morph: 0.095,
+  },
+  {
+    x: 0.08, y: 0.78,
+    r: 0.13,
+    color: [97, 219, 251],
+    alpha: 0.31,
+    vx: 0.014, vy: -0.009,
+    pts: 5, speed: 0.00118, morph: 0.09,
   },
 ];
 
@@ -139,8 +163,15 @@ window.addEventListener("scroll", () => { scrollY = window.scrollY; }, { passive
 function tick(t) {
   ctx.clearRect(0, 0, W, H);
 
-  // Scroll-based parallax offset for blobs (matching original blob-a/b/c offsets)
-  const offsets = [scrollY * 0.05, scrollY * -0.04, scrollY * 0.03];
+  // Scroll-based parallax offset with the same original motion pattern repeated.
+  const offsets = [
+    scrollY * 0.05,
+    scrollY * -0.04,
+    scrollY * 0.03,
+    scrollY * 0.02,
+    scrollY * -0.015,
+    scrollY * 0.01,
+  ];
 
   ctx.save();
   for (let i = 0; i < blobs.length; i++) {
