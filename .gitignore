@@ -4,5 +4,3 @@
 # Prevent accidental commits of heavy local media exports
 media/*.mp4
 media/*.mov
-media/Moonwalkers.jpg
-media/Moonwalkers1.jpg
